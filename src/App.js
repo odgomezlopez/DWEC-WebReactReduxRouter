@@ -1,27 +1,25 @@
+
+//Importo  estilos
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './App.css';
+
+
+//Importo mis componentes
 import MyNavBar from './webComp/MyNavBar';
+import MyHome from './webComp/MyHome';
 import MyFooter from './webComp/MyFooter';
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
-import Image from 'react-bootstrap/Image'
+//Importo mis recursos
 import Logo from './imgs/logo.svg'
-import { height } from '@mui/system';
 
+//Estructura de la Web App
 function App() {
   return (
-    <div className='bg-light min-vh-100'>
-        <MyNavBar />
-        <Container className='bg-info'>
-            <Row className='min-vh-100'>
-              <Col className="d-flex justify-content-center">
-                <Image src={Logo} rounded  />
-              </Col>
-            </Row>
-
-        </Container>
-        <MyFooter />
+    <div className='d-flex flex-column bg-light min-vh-100'>
+        <MyNavBar title="Green Basked" logo={Logo}/>
+        <MyHome logo={Logo}/>
+        <MyFooter className="footer"/>
     </div>
   )
 }

@@ -2,12 +2,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Image from 'react-bootstrap/Image'
 
-function MyNavBar() {
+//TODO Autofill en base a props
+function MyNavBar(props) {
   return (
     <Navbar className="bg-success" collapseOnSelect expand="lg" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">GreenBasked</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          {/*<Image style={{width: '60px'}} src={props.logo} rounded  />*/}
+          {props.title}
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -25,7 +30,7 @@ function MyNavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Carrito</Nav.Link>
+            <Nav.Link href="#deets">Carrito <i className="bi bi-basket-fill" style={{ fontSize: 20 }}></i></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
