@@ -3,11 +3,12 @@ import { createSlice } from '@reduxjs/toolkit'
 export const UsernameSlice = createSlice({
   name: 'username',
   initialState: {
-    value: "default", //Default value
+    value: (sessionStorage.getItem("username")) ? sessionStorage.getItem("username")  : "default"
   },
   reducers: {
     newUsername: (state, action) => {
       state.value = action.payload
+      sessionStorage.setItem("username",state.value)
     },
     deleteUsername: (state) => {
         state.value = ""

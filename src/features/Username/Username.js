@@ -6,7 +6,7 @@ function Username() {
   const dispatch = useDispatch();
 
   return (
-        <span>{username}</span>
+        <>{username}</>
   );
 }
 export default Username;

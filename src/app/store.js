@@ -5,6 +5,6 @@ import empleadosReducer from '../features/Empleados/EmpleadosSlice'
 export default configureStore({
   reducer: {
     empleados: empleadosReducer,
-    //username: usernameReducer,
+    username: usernameReducer,
   },
 })

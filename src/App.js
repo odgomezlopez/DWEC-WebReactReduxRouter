@@ -14,14 +14,16 @@ import './App.css';
 
 //Importo mis componentes
 import MyNavBar from './webComp/MyNavBar';
-
-import MyHome from './webComp/MyHome';
-import MyVerdura from "./webComp/MyVerdura";
-
-import NoFound from './webComp/NoFound';
-import MyInWork from './webComp/MyInWork';
-
+import GenericCenterView from './webComp/GenericCenterView';
 import MyFooter from './webComp/MyFooter';
+
+//Importo las paginas
+import MyHome from './pages/MyHome';
+import MyVerdura from "./pages/MyVerdura";
+
+import NoFound from './pages/NoFound';
+import MyInWork from './pages/MyInWork';
+import MyUserName from "./pages/MyUserName";
 
 //Importo mis recursos
 import Logo from './imgs/logo.svg'
@@ -31,16 +33,23 @@ function App() {
   return (
     <div className='d-flex flex-column bg-light min-vh-100'>
         <MyNavBar title="Green Basked" logo={Logo}/>
+        
         <Routes>
-          <Route path="/" element={<MyHome logo={Logo}/>} />
-          
-          <Route path="/frutas" element={<MyInWork text="Frutas"/>} />
-          <Route path="/verdura/:verdura" element={<MyVerdura verdura="Patata"/>} />
+          <Route path="/" element={<GenericCenterView><MyHome logo={Logo} /> </GenericCenterView>} />
+          <Route path="/frutas" element={<GenericCenterView><MyInWork text="Frutas"/></GenericCenterView>} />
+          <Route path="/verdura/:verdura" element={
+            <GenericCenterView>
+              <MyVerdura />
+            </GenericCenterView>
+          } />
+          <Route path="/username" element={<GenericCenterView><MyUserName /> </GenericCenterView>} />
 
-          <Route path="/carrito" element={<MyInWork text="Carrito"/>} />
-          
-          <Route path='*' exact={true} element={<NoFound/>} />
+
+          <Route path="/carrito" element={
+          <GenericCenterView><MyInWork text="Carrito"/></GenericCenterView>} />
+          <Route path='*' exact={true} element={<GenericCenterView><NoFound/></GenericCenterView>} />
         </Routes>
+        
         <MyFooter className="footer"/>
     </div>
   )

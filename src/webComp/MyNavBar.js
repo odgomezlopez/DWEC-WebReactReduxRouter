@@ -4,7 +4,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Image from 'react-bootstrap/Image'
 
+//Redux
+import Username from '../features/Username/Username';
+
+
 //TODO Autofill en base a props
+
 function MyNavBar(props) {
   return (
     <Navbar className="bg-success" collapseOnSelect expand="lg" variant="dark">
@@ -30,6 +35,10 @@ function MyNavBar(props) {
             </NavDropdown>
           </Nav>
           <Nav>
+            <Nav.Link href="/username">
+              <Username/>
+            </Nav.Link>
+
             <Nav.Link href="/carrito">Carrito <i className="bi bi-basket-fill" style={{ fontSize: 20 }}></i></Nav.Link>
           </Nav>
         </Navbar.Collapse>
