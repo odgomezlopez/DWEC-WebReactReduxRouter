@@ -11,7 +11,7 @@ function UsernameInput() {
 
   return (
     <div>
-       <input type="text" onInput={handleInput}></input>
+       <input type="text" onInput={handleInput} value={username}></input>
     </div>
   );
 }

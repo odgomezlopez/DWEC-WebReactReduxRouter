@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const UsernameSlice = createSlice({
   name: 'username',
   initialState: {
-    value: (sessionStorage.getItem("username")) ? sessionStorage.getItem("username")  : "default"
+    value: (sessionStorage.getItem("username")) ? sessionStorage.getItem("username")  : "guest"
   },
   reducers: {
     newUsername: (state, action) => {

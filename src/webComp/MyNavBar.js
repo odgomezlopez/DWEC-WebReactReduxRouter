@@ -39,7 +39,7 @@ function MyNavBar(props) {
               <Username/>
             </Nav.Link>
 
-            <Nav.Link href="/carrito">Carrito <i className="bi bi-basket-fill" style={{ fontSize: 20 }}></i></Nav.Link>
+            <Nav.Link href="/carrito">Carrito <i className="bi bi-basket-fill"></i></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

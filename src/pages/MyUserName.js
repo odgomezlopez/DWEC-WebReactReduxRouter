@@ -19,11 +19,12 @@ import EmpleadoNew from "../features/Empleados/EmpleadoNew";
 function MyUserName(props) {
     return (
         <>
-            <Username/>
+            {/*<Username/>*/}
+            <h1>Cambiar nombre de usuario</h1>
             <UsernameInput/>
-            <UsernameDelete/>
+            {/*<UsernameDelete/>
 
-            {/*<EmpleadoNew />
+            <EmpleadoNew />
             <Empleados/>*/}
         </>
     );
