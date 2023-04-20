@@ -15,11 +15,12 @@ import './App.css';
 //Importo mis componentes
 import MyNavBar from './webComp/MyNavBar';
 import GenericCenterView from './webComp/GenericCenterView';
+import ProductView from './webComp/ProductView';
 import MyFooter from './webComp/MyFooter';
 
 //Importo las paginas
 import MyHome from './pages/MyHome';
-import MyVerdura from "./pages/MyVerdura";
+import MyProducts from "./pages/MyProducts";
 
 import NoFound from './pages/NoFound';
 import MyInWork from './pages/MyInWork';
@@ -37,10 +38,10 @@ function App() {
         <Routes>
           <Route path="/" element={<GenericCenterView><MyHome logo={Logo} /> </GenericCenterView>} />
           <Route path="/frutas" element={<GenericCenterView><MyInWork text="Frutas"/></GenericCenterView>} />
-          <Route path="/verdura/:verdura" element={
-            <GenericCenterView>
-              <MyVerdura />
-            </GenericCenterView>
+          <Route path="/verdura/:title" element={
+            <ProductView>
+              <MyProducts action="Adoptar" />
+            </ProductView>
           } />
           <Route path="/username" element={<GenericCenterView><MyUserName /> </GenericCenterView>} />
 
